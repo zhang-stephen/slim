@@ -1,0 +1,72 @@
+---
+Language: Cpp
+BasedOnStyle: WebKit
+
+AlignAfterOpenBracket: true
+AlignArrayOfStructures: Right
+AlignConsecutiveAssignments:
+    Enabled: true
+    AlignCompound: true
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignConsecutiveMacros: Consecutive
+AlignConsecutiveShortCaseStatements:
+    Enabled: true
+    AlignCaseColons: true
+AlignEscapedNewlines: LeftWithLastLine
+AlignOperands: true
+AlignTrailingComments: true
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Always
+AllowShortEnumsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: WithoutElse
+AllowShortLoopsOnASingleLine: true
+BinPackArguments: false
+BinPackParameters: OnePerLine
+BitFieldColonSpacing: After
+BreakAfterAttributes: Never
+BreakBeforeBraces: Custom
+BraceWrapping:
+    AfterControlStatement: Always
+    AfterEnum: true
+    AfterExternBlock: true
+    AfterFunction: true
+    AfterNamespace: true
+    AfterUnion: true
+    BeforeCatch: true
+    BeforeElse: true
+    BeforeLambdaBody: true
+    BeforeWhile: true
+    SplitEmptyRecord: false
+BreakInheritanceList: BeforeComma
+BreakTemplateDeclarations: Yes
+ColumnLimit: 120
+Cpp11BracedListStyle: true
+EmptyLineBeforeAccessModifier: Always
+FixNamespaceComments: true
+IncludeBlocks: Regroup
+IndentCaseLabels: true
+IndentExternBlock: NoIndent
+IndentGotoLabels: false
+IndentWrappedFunctionNames: true
+InsertBraces: true
+InsertTrailingCommas: Wrapped
+IntegerLiteralSeparator:
+    Binary: 4
+    Decimal: 3
+    Hex: 4
+LineEnding: LF
+NamespaceIndentation: None
+NumericLiteralCase:
+    ExponentLetter: Lower
+    HexDigit: Lower
+    Prefix: Lower
+    Suffix: Lower
+RemoveEmptyLinesInUnwrappedLines: true
+SeparateDefinitionBlocks: Always
+SortUsingDeclarations: Lexicographic
+SpaceInEmptyBraces: Never
+SpacesInLineCommentPrefix:
+    Maximum: 1
+TabWidth: 4
