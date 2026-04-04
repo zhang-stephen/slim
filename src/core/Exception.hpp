@@ -5,15 +5,15 @@
 #include <cstdio>  // IWYU pragma: keep for std::printf()
 #include <cstdlib> // IWYU pragma: keep for std::abort()
 
-#define SLIM_REQUIRE(expr, err)                                                               \
-    do                                                                                        \
-    {                                                                                         \
-        if (!expr) [[unlikely]]                                                               \
-        {                                                                                     \
+#define SLIM_REQUIRE(expr, err)                                                     \
+    do                                                                              \
+    {                                                                               \
+        if (!expr) [[unlikely]]                                                     \
+        {                                                                           \
             std::printf("Slim fatal error: %s (%s:%u)\n", err, __FILE__, __LINE__); \
-            std::abort();                                                                     \
-        }                                                                                     \
-    }                                                                                         \
+            std::abort();                                                           \
+        }                                                                           \
+    }                                                                               \
     while (false)
 
 #define SLIM_TRY         if constexpr (true)

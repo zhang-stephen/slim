@@ -1,18 +1,21 @@
 module;
 
-#ifdef SLIM_USE_MODULAR_STL
-import std;
-#else
+#ifndef SLIM_USE_MODULAR_STL
 #include <exception>
 #include <string>
 #endif // SLIM_USE_MODULAR_STL
 
 export module slim.core:exception;
 
+#ifdef SLIM_USE_MODULAR_STL
+import std;
+#endif // SLIM_USE_MODULAR_STL
+
 export namespace slim
 {
 
-class SlimException : public std::exception {
+class SlimException : public std::exception
+{
 public:
     explicit SlimException(const char* message)
         : message_(message)

@@ -3,15 +3,16 @@ export module slim.core:noncopyable;
 export namespace slim
 {
 
-class NonCopyable {
+class NonCopyable
+{
 public:
-    NonCopyable() = default;
+    NonCopyable()  = default;
     ~NonCopyable() = default;
 
-    NonCopyable(const NonCopyable&) = delete;
+    NonCopyable(const NonCopyable&)            = delete;
     NonCopyable& operator=(const NonCopyable&) = delete;
 
-    NonCopyable(NonCopyable&&) = default;
+    NonCopyable(NonCopyable&&)            = default;
     NonCopyable& operator=(NonCopyable&&) = default;
 };
 

@@ -4,18 +4,17 @@ export namespace slim
 {
 
 template <typename T>
-class Singleton {
+class Singleton
+{
 public:
-    T& instance()
+    static T& instance()
     {
-        static Instance instance;
-
-        return instance;
+        static Instance inst;
+        return inst;
     }
 
 private:
-    struct Instance : public T
-    {
+    struct Instance : public T {
         using T::T;
     };
 };
