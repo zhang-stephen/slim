@@ -1,7 +1,7 @@
 module;
 
 #ifdef SLIM_USE_MODULAR_STL
-// import std;
+import std;
 #else
 #include <exception>
 #include <string>
