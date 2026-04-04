@@ -50,6 +50,39 @@ project (slim
         "Slim: Logging In Modern! A light-weighted & high-performance C++ logging lib, based on C++20 and newer"
 )
 
+
+# -----------------------------------------------------------------------------
+# check for module supports
+# -----------------------------------------------------------------------------
+message (STATUS "Compiler: ${CMAKE_CXX_COMPILER_ID}")
+if (SLIM_USE_MODULAR_STL)
+    if (APPLE)
+        if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+            # see https://github.com/llvm/llvm-project/issues/109895
+            # see https://github.com/Homebrew/homebrew-core/issues/226050
+            message (FATAL_ERROR "Modularized STL is not supported on Apple MacOS with Clang yet!")
+        # elseif (CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+        #     # FIXME: not working with the workaroud
+        #     # in fact, the gcc 15.1+ on apple, installed by homebrew, cannot work with modularized STL
+        #     # see https://gcc.gnu.org/bugzilla/show_bug.cgi?id=116827
+        #     message (WARNING "Disable module scanning for gcc on Apple MacOS!")
+        #     set (CMAKE_CXX_SCAN_FOR_MODULES off)
+        endif ()
+    endif ()
+
+    if (LINUX AND (CMAKE_CXX_COMPILER_ID STREQUAL GNU))
+        # HACK: the way to check should be verified in the near future
+        find_program (LSB_RELEASE lsb_release)
+        if (LSB_RELEASE)
+            execute_process (COMMAND ${LSB_RELEASE} -is OUTPUT_VARIABLE DISTRO OUTPUT_STRIP_TRAILING_WHITESPACE)
+            execute_process (COMMAND ${LSB_RELEASE} -rs OUTPUT_VARIABLE DISTRO_VERSION OUTPUT_STRIP_TRAILING_WHITESPACE)
+            if (DISTRO STREQUAL "Ubuntu" AND DISTRO_VERSION VERSION_LESS "26.04")
+                message (FATAL_ERROR "Modularized STL is not supported on Ubuntu ${DISTRO_VERSION}. Please use Ubuntu 26.04 or newer.")
+            endif ()
+        endif ()
+    endif ()
+endif ()
+
 # -----------------------------------------------------------------------------
 # option processing after project()
 # -----------------------------------------------------------------------------

@@ -1,0 +1,39 @@
+{
+    "version": 11,
+    "configurePresets": [
+        {
+            "name": "vcpkg",
+            "hidden": true,
+            "toolchainFile": "${fileDir}/ext/vcpkg/scripts/buildsystems/vcpkg.cmake"
+        },
+        {
+            "name": "ninja",
+            "hidden": true,
+            "generator": "Ninja"
+        },
+        {
+            "name": "vs2022",
+            "hidden": true,
+            "generator": "Visual Studio 17 2022"
+        },
+        {
+            "name": "vs2026",
+            "hidden": true,
+            "generator": "Visual Studio 18 2026"
+        },
+        {
+            "name": "slim-unix-cpp20",
+            "inherits": [
+                "vcpkg", "ninja"
+            ],
+            "binaryDir": "out/${presetName}",
+            "cacheVariables": {
+                "CMAKE_CXX_STANDARD": "20",
+                "SLIM_NO_EXCEPTIONS": "on",
+                "SLIM_USE_SYSTEM_FMTLIB": "on",
+                "SLIM_BUILD_TESTS": "on"
+            },
+            "environment": { }
+        }
+    ]
+}
