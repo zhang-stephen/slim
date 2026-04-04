@@ -8,10 +8,17 @@ Slim is a lightweight, high-performance C++20/23 logging library with modular ar
 
 ### Prerequisites
 
-- C++20 or newer (C++23 recommended for modular features)
 - CMake 3.30+
 - vcpkg (bundled in `ext/vcpkg`)
-- Clang or GCC
+- Clang, GCC, or MSVC
+- **C++20**: GCC 13+ or LLVM 17+
+- **C++23**: GCC 15+ or LLVM 22+
+
+**References:**
+- [GCC C++ Language Core Status](https://gcc.gnu.org/projects/cxx-status.html)
+- [libstdc++ (GCC STL) Status](https://gcc.gnu.org/onlinedocs/libstdc++/manual/status.html)
+- [LLVM C++ Language Core Status](https://clang.llvm.org/cxx_status.html)
+- [libc++ (LLVM STL) Status](https://libcxx.llvm.org)
 
 ### Configure and Build (Preset Preferred)
 
@@ -50,10 +57,11 @@ ext/vcpkg/                  vcpkg package manager
 
 ## CMake Presets
 
-| Preset | Compiler | Standard | Notes |
-|--------|----------|----------|-------|
-| `silm-unix-llvm-cpp20` | LLVM 17+ | C++20 | Default Unix preset |
-| `silm-unix-gnu-cpp20` | GCC 13+ | C++20 | Inherits from LLVM preset |
+| Preset | Standard | Notes |
+|--------|----------|-------|
+| `silm-unix-cpp20` | C++20 | Default Unix preset |
+
+> **Note:** The `unix` presets are for Unix-like OS (Linux, macOS or BSD support TBD).
 
 Base presets (hidden):
 - `vcpkg` - Sets vcpkg toolchain
