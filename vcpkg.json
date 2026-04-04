@@ -1,11 +1,28 @@
 {
     "name": "slim",
-    "description": "A lightweight high-performance logging library based on C++20",
+    "description": "A light-weighted & high-performance logging library based on C++20 or newer",
     "builtin-baseline": "61d43ee6f0cc440dc97983d36e0c85e80fe429d4",
-    "dependencies": [
-        {
-            "name": "fmt",
-            "version>=": "11.0.2#0"
+    "dependencies": [ ],
+    "default-features": [ ],
+    "features":
+    {
+        "test": {
+            "description": "Enable GTest for building",
+            "dependencies": [
+                {
+                    "name": "gtest",
+                    "version>=": "1.15.2"
+                }
+            ]
+        },
+        "fmt": {
+            "description": "Use fmtlib installed by vcpkg",
+            "dependencies": [
+                {
+                    "name": "fmt",
+                    "version>=": "11.0.2#0"
+                }
+            ]
         }
-    ]
+    }
 }
