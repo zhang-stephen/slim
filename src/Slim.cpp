@@ -4,7 +4,7 @@ module;
 
 module slim;
 
-import slim.core;
+import utils;
 
 #ifdef SLIM_USE_MODULAR_STL
 import std;
@@ -12,5 +12,5 @@ import std;
 
 namespace slim
 {
-void log(const char* message) { SLIM_THROW(SlimException("No implemented!")); }
+void log(const char* message) { SLIM_THROW(utils::SlimException("No implemented!")); }
 } // namespace slim

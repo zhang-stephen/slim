@@ -1,6 +1,6 @@
-export module slim.core:noncopyable;
+export module utils:noncopyable;
 
-export namespace slim
+export namespace slim::utils
 {
 
 class NonCopyable

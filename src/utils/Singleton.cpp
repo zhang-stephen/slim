@@ -1,11 +1,10 @@
-export module slim.core:singleton;
+export module utils:singleton;
 
-export namespace slim
+export namespace slim::utils
 {
 
 template <typename T>
-class Singleton
-{
+class Singleton {
 public:
     static T& instance()
     {
@@ -19,4 +18,4 @@ private:
     };
 };
 
-} // namespace slim
+} // namespace slim::utils

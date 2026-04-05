@@ -1,10 +1,9 @@
-export module slim.core:nonmovable;
+export module utils:nonmovable;
 
-export namespace slim
+export namespace slim::utils
 {
 
-class NonMovable
-{
+class NonMovable {
 public:
     NonMovable()  = default;
     ~NonMovable() = default;
@@ -16,4 +15,4 @@ public:
     NonMovable& operator=(NonMovable&&) = delete;
 };
 
-} // namespace slim
+} // namespace slim::utils

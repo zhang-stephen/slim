@@ -5,17 +5,16 @@ module;
 #include <string>
 #endif // SLIM_USE_MODULAR_STL
 
-export module slim.core:exception;
+export module utils:exception;
 
 #ifdef SLIM_USE_MODULAR_STL
 import std;
 #endif // SLIM_USE_MODULAR_STL
 
-export namespace slim
+export namespace slim::utils
 {
 
-class SlimException : public std::exception
-{
+class SlimException : public std::exception {
 public:
     explicit SlimException(const char* message)
         : message_(message)
@@ -33,4 +32,4 @@ private:
     std::string message_;
 };
 
-} // namespace slim
+} // namespace slim::utils

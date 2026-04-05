@@ -1,8 +1,7 @@
 export module slim;
 
-import slim.core;
+import utils;
 
 export namespace slim {
     void log(const char* message);
 }
-
